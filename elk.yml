@@ -15,18 +15,18 @@ spec:
     spec:
       containers:
       - name: elasticsearch
-        image: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:6.1.0
         ports:
         - containerPort: 9200
       - name: kibana
-        image: kibana
+        image: docker.elastic.co/kibana/kibana:6.1.0
         ports:
         - containerPort: 5601
         env:
           - name: ELASTICSEARCH_URL
             value: "http://localhost:9200"
       - name: logstash
-        image: logstash
+        image: docker.elastic.co/logstash/logstash:6.1.0
         ports:
         - containerPort: 8080
         args:
